@@ -37,3 +37,8 @@ Exemplo: um projeto com várias pastas, arquivos de 100 linhas e performance exc
 ### Código limpo em booleanos
 - Sempre escrever em forma de pergunta, exemplo: isLoading, isEnabled, isClosed.
 - Manter o mais semântico possível
+
+### Causa vs Efeito
+ - Ao invés de criar a variável isButtonDisabled que é o resultado do form está sendo enviado ,
+  devemos criar isFormSubmitting 
+ - Precisamos nomear nossas variáveis pela causa e não pelo efeito
