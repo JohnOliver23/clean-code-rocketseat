@@ -55,3 +55,14 @@ Exemplo: um projeto com várias pastas, arquivos de 100 linhas e performance exc
 - Tentar escrever outras variáveis de forma que nossas condicionais não precisem de negação
 - Sempre que possível evite elses e prefira o uso do early return
 - Sempre que possível evite condições aninhadas
+
+### Parâmetros e desestruturação
+- Sempre que possível receber e enviar parâmetros nomeados
+- Sempre que possível prefira receber objetos como parâmetro da função
+- Muitas vezes faz mais sentido a resposta da função ser objeto
+
+
+### Números mágicos
+- Sempre que possível, ao criar intervalos , fazer as operações diretamente no código e atribuir a uma variável
+- Sempre que possível, nomear os parâmetros de acordo com o formato que a gente as recebe
+ ex: priceInCents, discountAmountInPercentage
