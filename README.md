@@ -42,3 +42,9 @@ Exemplo: um projeto com várias pastas, arquivos de 100 linhas e performance exc
  - Ao invés de criar a variável isButtonDisabled que é o resultado do form está sendo enviado ,
   devemos criar isFormSubmitting 
  - Precisamos nomear nossas variáveis pela causa e não pelo efeito
+
+ ### Código em ingês
+- Código que não está em inglês não é um código acessível
+- Existem leitores de tela usados pra ler códigos e esses leitores não conseguem diferenciar duas linguagens no mesmo código
+- Criar o código 100% em inglês
+- Misturar inglês e português deixa seu código msnos limpo e mais difícil de entender
