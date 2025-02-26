@@ -48,3 +48,10 @@ Exemplo: um projeto com várias pastas, arquivos de 100 linhas e performance exc
 - Existem leitores de tela usados pra ler códigos e esses leitores não conseguem diferenciar duas linguagens no mesmo código
 - Criar o código 100% em inglês
 - Misturar inglês e português deixa seu código msnos limpo e mais difícil de entender
+
+ ### Regras em condicionais
+- Evite sempre negações, negações são sempre mais difíceis de ser lidas
+- Sempre que possível escreva condicionais sem negação
+- Tentar escrever outras variáveis de forma que nossas condicionais não precisem de negação
+- Sempre que possível evite elses e prefira o uso do early return
+- Sempre que possível evite condições aninhadas
