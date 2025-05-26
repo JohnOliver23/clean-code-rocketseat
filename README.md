@@ -81,3 +81,8 @@ Exemplo: um projeto com várias pastas, arquivos de 100 linhas e performance exc
 
 - O comentário não serve para explicar o funcionamento de algo, isto é responsabilidade da Documentação.
 - O comentário serve como um aviso ao próximo desenvolvedor do motivo daquele código ter sido escrito daquela forma, seja por alguma limitação/problema de biblioteca ou para avisar de uma padrão diferente de escrita.
+
+### Evite Syntatic Sugars
+
+- Syntatic Sugars são estruturas/funcionalidades que geralmente são muito específicas à determinada linguagem, por exemplo, a desestruturação e o spread operator (...) do JavaScript, ou métodos de conversão de tipo de variáveis.
+- O recomendado é utilizar soluções "genéricas" quando possível, desde que não aumente a complexidade do código e nem diminua sua produtividade, porque dessa forma o próximo programador não necessitaria de um alto grau de conhecimento da linguagem para entender e fazer a manutenção do código.
