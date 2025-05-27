@@ -107,3 +107,11 @@ Quando se separa um componente em outros menores, é muito comum que se leve tod
 Componente puro é um tipo de componente cuja existência não depende do contexto em que está, ele tem autonomia de funcionamento sem precisar de informações externas, desde que respeitadas suas propriedades.
 
 Exemplo: o Header de uma aplicação contém um botão com uma função que adiciona uma nota em uma lista de notas, para ele se tornar um componente puro o correto seria criar uma interface que recebe justamente esta função a ser utilizada, assim o Header pode exister em qualquer outro contexto da aplicação desde que seja passado alguma função para ser executada no botão.
+
+### Funções e eventos no React
+
+Recomendação de prefixos para nomes de funções: handle e on.
+
+Sempre que for criar uma função dentro do um componente e essa função é uma função disparada através de um evento do usuário como `click` `submit` é recomendado prefixar essa função com `handle` por ex: `handleCreateUser` `handleSubmitForm`
+
+Quando eu crio um componente e esse componente predcisa receber uma função que é disparada a partir de um evento do usuário é recomendado iniciar essas funções com o prefixo `on` ex: `onCreateUser` `onSubmitForm`

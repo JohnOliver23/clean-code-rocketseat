@@ -3,7 +3,7 @@ interface HeaderProps {
 }
 
 export function Header({ onCreateNewNote }: HeaderProps) {
-  // function createNote() {
+    // function handleCreateNote() {
     //     Cria uma nota e adiciona no array
     // }
     /**
