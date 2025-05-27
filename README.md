@@ -86,3 +86,15 @@ Exemplo: um projeto com várias pastas, arquivos de 100 linhas e performance exc
 
 - Syntatic Sugars são estruturas/funcionalidades que geralmente são muito específicas à determinada linguagem, por exemplo, a desestruturação e o spread operator (...) do JavaScript, ou métodos de conversão de tipo de variáveis.
 - O recomendado é utilizar soluções "genéricas" quando possível, desde que não aumente a complexidade do código e nem diminua sua produtividade, porque dessa forma o próximo programador não necessitaria de um alto grau de conhecimento da linguagem para entender e fazer a manutenção do código.
+
+## Código limpo com React
+
+### Desacoplando componentes
+
+Quando separar componentes em componentes menores ?
+
+1. Quando eu tenho algo repetitivo:
+   Analisar necessidade de separação, muitas vezes não é necessário quando a estrutura se repete, mas não tem nenhuma lógica envolvida, essa análise evita o excesso de componentização em um projeto.
+
+2. Quando consigo isolar algo do seu contexto (sem prejudicar o comportamento original):
+   Quando existe alguma variável, função, useEffect, etc. que está totalmente associado à uma parte específica da interface.
