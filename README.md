@@ -93,8 +93,17 @@ Exemplo: um projeto com várias pastas, arquivos de 100 linhas e performance exc
 
 Quando separar componentes em componentes menores ?
 
-1. Quando eu tenho algo repetitivo:
-   Analisar necessidade de separação, muitas vezes não é necessário quando a estrutura se repete, mas não tem nenhuma lógica envolvida, essa análise evita o excesso de componentização em um projeto.
+**1. Quando eu tenho algo repetitivo:**  
+Analisar necessidade de separação, muitas vezes não é necessário quando a estrutura se repete, mas não tem nenhuma lógica envolvida.  
+Essa análise evita o excesso de componentização em um projeto.
 
-2. Quando consigo isolar algo do seu contexto (sem prejudicar o comportamento original):
-   Quando existe alguma variável, função, useEffect, etc. que está totalmente associado à uma parte específica da interface.
+**2. Quando consigo isolar algo do seu contexto (sem prejudicar o comportamento original):**  
+Quando existe alguma variável, função, `useEffect`, etc. que está totalmente associada à uma parte específica da interface.
+
+### Componentes puros
+
+Quando se separa um componente em outros menores, é muito comum que se leve toda a lógica do script para o componente novo e às vezes essa lógica depende de comunicação com API/back-end, useEffect() em variáveis do componente pai, entre outros, nesses casos o componente criado não é um componente puro e sim um componente separado em dois arquivos.
+
+Componente puro é um tipo de componente cuja existência não depende do contexto em que está, ele tem autonomia de funcionamento sem precisar de informações externas, desde que respeitadas suas propriedades.
+
+Exemplo: o Header de uma aplicação contém um botão com uma função que adiciona uma nota em uma lista de notas, para ele se tornar um componente puro o correto seria criar uma interface que recebe justamente esta função a ser utilizada, assim o Header pode exister em qualquer outro contexto da aplicação desde que seja passado alguma função para ser executada no botão.

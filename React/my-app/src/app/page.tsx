@@ -13,9 +13,14 @@ import { useState } from 'react'
 export default function Home() {
   const [todos, setTodos] = useState<string[]>([])
 
+  function handleCreateNewNote() {
+    // Cria nova nota
+  }
+
   return (
     <div>
-    <Header/>
+    {/* Por conta da passagem da função, o componente Header é um componente puro */}
+    <Header onCreateNewNote={handleCreateNewNote}/>
 
       <main>
         <h2>Advantages</h2>
