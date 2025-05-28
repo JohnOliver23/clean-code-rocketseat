@@ -122,11 +122,13 @@ Quando eu crio um componente e esse componente precisa receber uma função que 
 
 ##### 📌 Problemas do componente tradicional (`InputOld`)
 
-`<InputOld
-label="Nome"
-errorMessage="Digite seu nome corretamente!"
-icon={<div />}
-/>`
+```tsx
+<InputOld
+  label="Nome"
+  errorMessage="Digite seu nome corretamente!"
+  icon={<div />}
+/>
+```
 
 ##### 🧩 Por que `InputOld` não escala bem?
 
@@ -159,12 +161,15 @@ icon={<div />}
 
 A composição de componentes resolve esses problemas ao dividir responsabilidades em blocos reutilizáveis e independentes:
 
-`<Input.Root>
-<Input.Label title="Nome" />
-<Input.FormField />
-<Input.Icon>
-</Input.Icon>
-</Input.Root>`
+```tsx
+<Input.Root>
+  <Input.Label title="Nome" />
+  <Input.FormField />
+  <Input.Icon>
+    <span />
+  </Input.Icon>
+</Input.Root>
+```
 
 ##### 🧠 Como funciona?
 
@@ -173,27 +178,31 @@ A composição de componentes resolve esses problemas ao dividir responsabilidad
 - **Input.FormField**: Campo de input propriamente dito.
 - **Input.Icon**: Wrapper para ícones; a posição do ícone é definida pela ordem dos subcomponentes.
 
-###### 📦 Exemplos
+##### 📦 Exemplos
 
-- **Ícone á direita**:
+- **Ícone à direita**:
 
-`<Input.Root>
-<Input.Label title="Nome" />
-<Input.FormField />
-<Input.Icon>
-<span />
-</Input.Icon>
-</Input.Root>`
+```tsx
+<Input.Root>
+  <Input.Label title="Nome" />
+  <Input.FormField />
+  <Input.Icon>
+    <span />
+  </Input.Icon>
+</Input.Root>
+```
 
-- **Ícone á esquerda**:
+- **Ícone à esquerda**:
 
-`<Input.Root>
-<Input.Label title="Nome" />
-<Input.Icon>
-<span />
-</Input.Icon>
-<Input.FormField />
-</Input.Root>`
+```tsx
+<Input.Root>
+  <Input.Label title="Nome" />
+  <Input.Icon>
+    <span />
+  </Input.Icon>
+  <Input.FormField />
+</Input.Root>
+```
 
 ##### 🎯 Vantagens
 
