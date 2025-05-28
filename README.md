@@ -122,11 +122,11 @@ Quando eu crio um componente e esse componente precisa receber uma função que 
 
 ##### 📌 Problemas do componente tradicional (`InputOld`)
 
-<InputOld
+`<InputOld
 label="Nome"
 errorMessage="Digite seu nome corretamente!"
 icon={<div />}
-/>
+/>`
 
 ##### 🧩 Por que `InputOld` não escala bem?
 
@@ -159,12 +159,12 @@ icon={<div />}
 
 A composição de componentes resolve esses problemas ao dividir responsabilidades em blocos reutilizáveis e independentes:
 
-<Input.Root>
+`<Input.Root>
 <Input.Label title="Nome" />
 <Input.FormField />
 <Input.Icon>
 </Input.Icon>
-</Input.Root>
+</Input.Root>`
 
 ##### 🧠 Como funciona?
 
@@ -176,22 +176,22 @@ A composição de componentes resolve esses problemas ao dividir responsabilidad
 ###### 📦 Exemplos
 
 {/_ Ícone à direita _/}
-<Input.Root>
+`<Input.Root>
 <Input.Label title="Nome" />
 <Input.FormField />
 <Input.Icon>
 <span />
 </Input.Icon>
-</Input.Root>
+</Input.Root>`
 
 {/_ Ícone à esquerda _/}
-<Input.Root>
+`<Input.Root>
 <Input.Label title="Nome" />
 <Input.Icon>
 <span />
 </Input.Icon>
 <Input.FormField />
-</Input.Root>
+</Input.Root>`
 
 ##### 🎯 Vantagens
 
