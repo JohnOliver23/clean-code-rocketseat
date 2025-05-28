@@ -118,9 +118,9 @@ Quando eu crio um componente e esse componente precisa receber uma função que 
 
 ### Composição vs Customização
 
-## 🧩 Refatorando Inputs com Pattern Composition
+#### 🧩 Refatorando Inputs com Pattern Composition
 
-### 📌 Problemas do componente tradicional (`InputOld`)
+##### 📌 Problemas do componente tradicional (`InputOld`)
 
 <InputOld
 label="Nome"
@@ -128,9 +128,9 @@ errorMessage="Digite seu nome corretamente!"
 icon={<div />}
 />
 
-# 🧩 Por que `InputOld` não escala bem?
+##### 🧩 Por que `InputOld` não escala bem?
 
-## ❌ Problemas do componente monolítico
+##### ❌ Problemas do componente monolítico
 
 - **Responsabilidades misturadas**  
   Junta `label`, `ícone`, `input` e `mensagem de erro` em um único componente.
@@ -155,7 +155,7 @@ icon={<div />}
 
 ---
 
-## ✅ Solução com Pattern Composition
+#### ✅ Solução com Pattern Composition
 
 A composição de componentes resolve esses problemas ao dividir responsabilidades em blocos reutilizáveis e independentes:
 
@@ -166,39 +166,37 @@ A composição de componentes resolve esses problemas ao dividir responsabilidad
 </Input.Icon>
 </Input.Root>
 
-## 🧠 Como funciona?
+##### 🧠 Como funciona?
 
 - **Input.Root**: Container principal que agrupa todos os subcomponentes.
 - **Input.Label**: Representa o rótulo do campo.
 - **Input.FormField**: Campo de input propriamente dito.
 - **Input.Icon**: Wrapper para ícones; a posição do ícone é definida pela ordem dos subcomponentes.
 
-## 📦 Exemplos
+###### 📦 Exemplos
 
-```tsx
-{/* Ícone à direita */}
+{/_ Ícone à direita _/}
 <Input.Root>
-  <Input.Label title="Nome" />
-  <Input.FormField />
-  <Input.Icon>
-    <span />
-  </Input.Icon>
+<Input.Label title="Nome" />
+<Input.FormField />
+<Input.Icon>
+<span />
+</Input.Icon>
 </Input.Root>
 
-{/* Ícone à esquerda */}
+{/_ Ícone à esquerda _/}
 <Input.Root>
-  <Input.Label title="Nome" />
-  <Input.Icon>
-    <span />
-  </Input.Icon>
-  <Input.FormField />
+<Input.Label title="Nome" />
+<Input.Icon>
+<span />
+</Input.Icon>
+<Input.FormField />
 </Input.Root>
 
-## 🎯 Vantagens
+##### 🎯 Vantagens
 
 - ✅ **Reutilizável:** Componentes individuais podem ser usados separadamente
 - ✅ **Flexível:** Ordem dos elementos definida na composição
 - ✅ **Personalizável:** Cada parte aceita suas próprias props
 - ✅ **Manutenção fácil:** Alterações são localizadas
 - ✅ **Escalável:** Fácil criar variações reutilizando blocos
-```
