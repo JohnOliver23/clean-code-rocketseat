@@ -110,8 +110,95 @@ Exemplo: o Header de uma aplicação contém um botão com uma função que adic
 
 ### Funções e eventos no React
 
-Recomendação de prefixos para nomes de funções: handle e on.
+Recomendação de prefixos para nomes de funções: `handle` e `on`.
 
 Sempre que for criar uma função dentro do um componente e essa função é uma função disparada através de um evento do usuário como `click` `submit` é recomendado prefixar essa função com `handle` por ex: `handleCreateUser` `handleSubmitForm`
 
-Quando eu crio um componente e esse componente predcisa receber uma função que é disparada a partir de um evento do usuário é recomendado iniciar essas funções com o prefixo `on` ex: `onCreateUser` `onSubmitForm`
+Quando eu crio um componente e esse componente precisa receber uma função que é disparada a partir de um evento do usuário é recomendado iniciar essas funções com o prefixo `on` ex: `onCreateUser` `onSubmitForm`
+
+### Composição vs Customização
+
+## 🧩 Refatorando Inputs com Pattern Composition
+
+### 📌 Problemas do componente tradicional (`InputOld`)
+
+<InputOld
+label="Nome"
+errorMessage="Digite seu nome corretamente!"
+icon={<div />}
+/>
+
+# 🧩 Por que `InputOld` não escala bem?
+
+## ❌ Problemas do componente monolítico
+
+- **Responsabilidades misturadas**  
+  Junta `label`, `ícone`, `input` e `mensagem de erro` em um único componente.
+
+- **Pouca reutilização**  
+  Não é possível reutilizar partes individuais como apenas a `label` ou o `input`.
+
+- **Estrutura rígida**  
+  Mesmo que você não use `ícone` ou `label`, o componente ainda renderiza espaço reservado para eles.
+
+- **Baixa flexibilidade**  
+  Para variações simples, como trocar o ícone de lado, é necessário adicionar novas props como `rightIcon`.
+
+- **Estilização limitada**  
+  Difícil aplicar `className`, `id` ou outras props específicas em partes internas sem criar novas props externas.
+
+- **Manutenção difícil**  
+  Qualquer alteração pequena exige lógica condicional e reestruturação do componente inteiro.
+
+- **Código duplicado**  
+  Para criar variações como `Input com erro acima`, `Input sem ícone`, etc., é necessário duplicar ou criar novos componentes.
+
+---
+
+## ✅ Solução com Pattern Composition
+
+A composição de componentes resolve esses problemas ao dividir responsabilidades em blocos reutilizáveis e independentes:
+
+<Input.Root>
+<Input.Label title="Nome" />
+<Input.FormField />
+<Input.Icon>
+</Input.Icon>
+</Input.Root>
+
+## 🧠 Como funciona?
+
+- **Input.Root**: Container principal que agrupa todos os subcomponentes.
+- **Input.Label**: Representa o rótulo do campo.
+- **Input.FormField**: Campo de input propriamente dito.
+- **Input.Icon**: Wrapper para ícones; a posição do ícone é definida pela ordem dos subcomponentes.
+
+## 📦 Exemplos
+
+```tsx
+{/* Ícone à direita */}
+<Input.Root>
+  <Input.Label title="Nome" />
+  <Input.FormField />
+  <Input.Icon>
+    <span />
+  </Input.Icon>
+</Input.Root>
+
+{/* Ícone à esquerda */}
+<Input.Root>
+  <Input.Label title="Nome" />
+  <Input.Icon>
+    <span />
+  </Input.Icon>
+  <Input.FormField />
+</Input.Root>
+
+## 🎯 Vantagens
+
+- ✅ **Reutilizável:** Componentes individuais podem ser usados separadamente
+- ✅ **Flexível:** Ordem dos elementos definida na composição
+- ✅ **Personalizável:** Cada parte aceita suas próprias props
+- ✅ **Manutenção fácil:** Alterações são localizadas
+- ✅ **Escalável:** Fácil criar variações reutilizando blocos
+```

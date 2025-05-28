@@ -2,6 +2,8 @@
 
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import { Input } from '@/components/Input'
+import { InputOld } from '@/components/Input.old'
 import { useState } from 'react'
 
 {/**
@@ -21,6 +23,28 @@ export default function Home() {
     <div>
     {/* Por conta da passagem da função, o componente Header é um componente puro */}
     <Header onCreateNewNote={handleCreateNewNote}/>
+
+  {/** InputOld tem estrutura engessada, baixo reuso e acoplamento alto, o que vai ficando mais problemático conforme o componente cresce. */}
+    <InputOld
+      label="Nome"
+      errorMessage='Digite seu nome corretamente!'
+      icon={<div/>}
+      />
+      {/**O Input.Root funciona como um contêiner principal que agrupa todos os elementos relacionados */}
+      <Input.Root>
+      {/**O Input.Label define o rótulo do campo e pode ser reutilizado em qualquer contexto. */}
+        <Input.Label title="name" />
+        {/**O Input.FormField representa o campo de entrada (input) propriamente dito. */}
+        <Input.FormField />
+        {/** Agora O Input.Icon é um elemento opcional e flexível que pode ser posicionado conforme a ordem dos filhos:
+
+          Se posicionado após o FormField, o ícone aparece à direita.
+
+          Se posicionado antes, aparece à esquerda. */}
+        <Input.Icon>
+          <span />
+        </Input.Icon>
+      </Input.Root>
 
       <main>
         <h2>Advantages</h2>
