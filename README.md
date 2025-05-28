@@ -175,8 +175,8 @@ A composição de componentes resolve esses problemas ao dividir responsabilidad
 
 ###### 📦 Exemplos
 
-{/_ Ícone à direita _/}
-`<Input.Root>
+- **Ícone á direita**:
+  `<Input.Root>
 <Input.Label title="Nome" />
 <Input.FormField />
 <Input.Icon>
@@ -184,8 +184,8 @@ A composição de componentes resolve esses problemas ao dividir responsabilidad
 </Input.Icon>
 </Input.Root>`
 
-{/_ Ícone à esquerda _/}
-`<Input.Root>
+- **Ícone á esquerda**:
+  `<Input.Root>
 <Input.Label title="Nome" />
 <Input.Icon>
 <span />
