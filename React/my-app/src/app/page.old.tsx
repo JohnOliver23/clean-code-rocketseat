@@ -9,7 +9,7 @@ import { useState } from 'react'
   */}
 
 export default function Home() {
-  const [todos, setTodos] = useState<string[]>([])
+  const [todos] = useState<string[]>([])
 
   // Essa variável está associada apenas ao footer da página,
   // então o recomendado seria criar um componente para o footer

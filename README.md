@@ -211,3 +211,9 @@ A composição de componentes resolve esses problemas ao dividir responsabilidad
 - ✅ **Personalizável:** Cada parte aceita suas próprias props
 - ✅ **Manutenção fácil:** Alterações são localizadas
 - ✅ **Escalável:** Fácil criar variações reutilizando blocos
+
+### Condicionais no render
+
+Evite condicionais na camada HTML de seu código, prefira criar variáveis com o condicional na camada JavaScript.
+
+É recomendado deixar a camada HTML o menos dependente de operações javascript possível

@@ -13,11 +13,13 @@ import { useState } from 'react'
   */}
 
 export default function Home() {
-  const [todos, setTodos] = useState<string[]>([])
+  const [todos] = useState<string[]>([])
 
   function handleCreateNewNote() {
     // Cria nova nota
   }
+
+  const isTodoListEmpty = todos.length === 0
 
   return (
     <div>
@@ -67,16 +69,11 @@ export default function Home() {
 
         <h2>Notes list</h2>
           <ul>
-            { 
-              /**
-               * Evite condicionais no render,
-               * Prefira defini-las na camada do JavaScript
-               */
-              todos.length == 0 
-              ? <li>Empty notes list</li> 
-              : todos.map(todo => <li key={ todo }>{ todo }</li>)
-            }
+            {todos.map(todo => <li key={ todo }>{ todo }</li>)}
           </ul>
+          { isTodoListEmpty && (
+                <p>Empty notes list</p> 
+          )}
       </main>
       
       <hr />
